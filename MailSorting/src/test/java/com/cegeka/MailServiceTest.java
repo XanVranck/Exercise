@@ -21,13 +21,7 @@ public class MailServiceTest {
     private RecruitmentRepository recruitmentRepository;
 
     @Mock
-    private SpamRepository spamRepository;
-
-    @Mock
     private SalesRepository salesRepository;
-
-    @Mock
-    private ReceptionRepository receptionRepository;
 
     @Test
     public void ReturnAllMailsCV(){

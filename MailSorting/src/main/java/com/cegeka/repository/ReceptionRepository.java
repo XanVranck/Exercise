@@ -10,7 +10,6 @@ import java.util.List;
 public class ReceptionRepository implements IRepository {
     List<Mail> mailsReception = new ArrayList<>();
 
-
     @Override
     public void addMail(Mail mail) {
         mailsReception.add(mail);
