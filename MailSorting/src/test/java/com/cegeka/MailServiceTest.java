@@ -10,6 +10,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
+import static org.mockito.Matchers.refEq;
+
 public class MailServiceTest {
     @Rule
     public MockitoRule rule = MockitoJUnit.rule();
@@ -32,12 +34,12 @@ public class MailServiceTest {
     @Test
     public void SortMailsCV_ShouldSendToCVRepo(){
         mailService.sortMail("CV");
-        Mockito.verify(recruitmentRepository).addMail(new Mail("CV"));
+        Mockito.verify(recruitmentRepository).addMail(refEq(new Mail("CV")));
     }
 
     @Test
     public void SortMailsSales_ShouldSendToSalesRepo(){
-        mailService.sortMail("sales");
-        Mockito.verify(salesRepository).addMail(new Mail("sales"));
+        mailService.sortMail("proposal");
+        Mockito.verify(salesRepository).addMail(refEq(new Mail("proposal")));
     }
 }
