@@ -10,6 +10,10 @@ public class Mail {
         this.subject = subject;
     }
 
+    public String toSubject(){
+        return "subject: " + subject;
+    }
+
     public String toString(){
         return "subject: " + subject;
     }

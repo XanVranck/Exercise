@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @Controller
 @RequestMapping("/mail")
@@ -22,44 +25,36 @@ public class MailController {
     @ResponseBody
     void addMail(
             @RequestParam(value = "subject") String subject) {
-        mailService.sortMail(subject);
+        mailService.sortMailV2(subject);
     }
 
     @RequestMapping(value = "/reception", method = RequestMethod.GET)
     @ResponseBody
     List<String> receptionMails() {
-        List<String> subject = new ArrayList<>();
-        for (Mail mail : mailService.getAllReceptionMails()) {
-            subject.add(mail.toString());
-        }
-        return subject;
+        return convertFromMailsToSubjects(mailService.getAllReceptionMails());
     }
 
     @RequestMapping(value = "/recruitment", method = RequestMethod.GET)
     @ResponseBody
     List<String> recruitmentMails() {
-        List<String> subject = new ArrayList<>();
-        for (Mail mail : mailService.getAllRecruitmentMails()) {
-            subject.add(mail.toString());
-        }
-        return subject;
+        return convertFromMailsToSubjects(mailService.getAllRecruitmentMails());
     }
 
     @RequestMapping(value = "/sales", method = RequestMethod.GET)
     @ResponseBody
     List<String> salesMails() {
-        List<String> subject = new ArrayList<>();
-        for (Mail mail : mailService.getAllSalesMails()) {
-            subject.add(mail.toString());
-        }
-        return subject;    }
+        return convertFromMailsToSubjects(mailService.getAllSalesMails());
+    }
 
     @RequestMapping(value = "/spam", method = RequestMethod.GET)
     @ResponseBody
     List<String> spamMails() {
-        List<String> subject = new ArrayList<>();
-        for (Mail mail : mailService.getAllSpamMails()) {
-            subject.add(mail.toString());
-        }
-        return subject;    }
+        return convertFromMailsToSubjects(mailService.getAllSpamMails());
+    }
+
+    private List<String> convertFromMailsToSubjects(List<Mail> mails) {
+        return mails.stream()
+                .map(mail -> mail.toSubject())
+                .collect(toList());
+    }
 }
