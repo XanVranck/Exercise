@@ -40,7 +40,7 @@ public class MailService {
         return recruitmentRepository.getAllMails();
     }
 
-    public List<Mail> getAllReceptioonMails() {
+    public List<Mail> getAllReceptionMails() {
         return receptionRepository.getAllMails();
     }
 

@@ -29,7 +29,7 @@ public class MailController {
     @ResponseBody
     List<String> receptionMails() {
         List<String> subject = new ArrayList<>();
-        for (Mail mail : mailService.getAllReceptioonMails()) {
+        for (Mail mail : mailService.getAllReceptionMails()) {
             subject.add(mail.toString());
         }
         return subject;
