@@ -25,7 +25,7 @@ public class MailController {
     @ResponseBody
     void addMail(
             @RequestParam(value = "subject") String subject) {
-        mailService.sortMail(subject);
+        mailService.sortMailV2(subject);
     }
 
     @RequestMapping(value = "/reception", method = RequestMethod.GET)

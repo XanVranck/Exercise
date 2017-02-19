@@ -1,14 +1,13 @@
 package com.cegeka.service;
 
 import com.cegeka.Mail;
-import com.cegeka.repository.ReceptionRepository;
-import com.cegeka.repository.RecruitmentRepository;
-import com.cegeka.repository.SalesRepository;
-import com.cegeka.repository.SpamRepository;
+import com.cegeka.repository.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
+import java.util.Map;
 
 @Named
 public class MailService {
@@ -24,6 +23,13 @@ public class MailService {
     @Inject
     private ReceptionRepository receptionRepository;
 
+    @Value("#{{'cv':@recruitmentRepository," +
+            "'proposal':@salesRepository," +
+            "'promotion':@spamRepository," +
+            "'coupon':@spamRepository," +
+            "'default':@receptionRepository}}")
+    private Map<String, IRepository> repositoryMap;
+
     public void sortMail(String subject) {
         if (subject.toLowerCase().equals("cv")) {
             recruitmentRepository.addMail(new Mail(subject));
@@ -34,6 +40,10 @@ public class MailService {
         } else {
             receptionRepository.addMail(new Mail(subject));
         }
+    }
+
+    public void sortMailV2(String subject) {
+        repositoryMap.getOrDefault(subject.toLowerCase(), receptionRepository).addMail(new Mail(subject));
     }
 
     public List<Mail> getAllRecruitmentMails() {
