@@ -13,8 +13,4 @@ public class Mail {
     public String toSubject(){
         return "subject: " + subject;
     }
-
-    public String toString(){
-        return "subject: " + subject;
-    }
 }
