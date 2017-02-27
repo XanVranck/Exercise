@@ -1,12 +1,25 @@
 package be.cegeka.certificate.domain.klant;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by xanv on 27/02/2017.
  */
 public class Adres {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ADRES_ID")
+    private int id;
+    @Column(name = "STRAAT")
     private String street;
+    @Column(name = "NUMMER")
     private String number;
+    @Column(name = "POSTCODE")
     private String zipCode;
+    @Column(name = "STAD")
     private String city;
 
     public Adres() {
