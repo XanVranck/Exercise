@@ -34,7 +34,7 @@ idea {
 flyway {
     url = 'jdbc:mysql://localhost:3306/certificates'
     user = 'root'
-    schemas = ['orders', 'supplier']
+    schemas = ['certificates']
 }
 
 jar {
