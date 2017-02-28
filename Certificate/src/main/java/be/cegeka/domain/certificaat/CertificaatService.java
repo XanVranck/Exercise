@@ -3,11 +3,10 @@ package be.cegeka.domain.certificaat;
 import be.cegeka.domain.order.Order;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
-/**
- * Created by xanv on 28/02/2017.
- */
+@Named
 public class CertificaatService {
     @Inject
     CertificaatRepository certificaatRepository;
