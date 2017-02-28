@@ -14,7 +14,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORDER_ID")
-    private int klantenID;
+    private int orderID;
 
     @Column(name = "WORK_ORDER_NUMBER")
     private String workOrderNumber;
@@ -42,7 +42,7 @@ public class Order {
     }
 
     public int getKlantenID() {
-        return klantenID;
+        return orderID;
     }
 
     public String getWorkOrderNumber() {
