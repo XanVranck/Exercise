@@ -1,6 +1,9 @@
 package be.cegeka.domain.order;
 
+import be.cegeka.domain.certificaat.Certificaat;
+
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by xanv on 28/02/2017.
@@ -24,6 +27,9 @@ public class Order {
 
     @Column
     private int total;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Certificaat> certificaten;
 
     public Order() {
     }

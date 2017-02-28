@@ -1,6 +1,10 @@
 package be.cegeka.domain.klant;
 
+import be.cegeka.domain.certificaat.Certificaat;
+import be.cegeka.domain.order.Order;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "KLANTEN")
@@ -20,6 +24,9 @@ public class Klant {
     private String zipCode;
     @Column(name = "STAD")
     private String city;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Order> orders;
+
 
     public Klant(String name, String street, String number, String zipCode, String city) {
         this.name = name;
