@@ -2,7 +2,6 @@ package be.cegeka.controller;
 
 import be.cegeka.domain.certificaat.Certificaat;
 import be.cegeka.domain.certificaat.CertificaatService;
-import be.cegeka.domain.klant.Klant;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
