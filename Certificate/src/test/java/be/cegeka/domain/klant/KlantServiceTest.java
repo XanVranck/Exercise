@@ -1,7 +1,5 @@
 package be.cegeka.domain.klant;
 
-import be.cegeka.domain.Klant.Klant;
-import be.cegeka.domain.Klant.KlantRepository;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -30,6 +28,12 @@ public class KlantServiceTest {
         Klant klant=new Klant("paulien","Doelhaagstraat", "78", "5555", "Rumst");
         klantService.addKlant(klant);
         verify(klantRepository).addKlant(refEq(klant));
+    }
+
+    @Test
+    public void getCustomers() throws Exception{
+        klantService.getKlanten();
+        verify(klantRepository).getKlanten();
     }
 
 }

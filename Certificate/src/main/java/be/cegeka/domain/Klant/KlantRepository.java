@@ -1,7 +1,6 @@
-package be.cegeka.domain.Klant;
+package be.cegeka.domain.klant;
 
 import javax.inject.Named;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -20,6 +19,6 @@ public class KlantRepository {
     }
 
     public List<Klant> getKlanten() {
-        return entityManager.createQuery("select k from Klant k", Klant.class).getResultList();
+        return entityManager.createQuery("select k from klant k", Klant.class).getResultList();
     }
 }

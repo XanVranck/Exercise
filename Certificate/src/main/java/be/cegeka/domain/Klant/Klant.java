@@ -1,6 +1,5 @@
-package be.cegeka.domain.Klant;
+package be.cegeka.domain.klant;
 
-import be.cegeka.domain.certificaat.Certificaat;
 import be.cegeka.domain.order.Order;
 
 import javax.persistence.*;

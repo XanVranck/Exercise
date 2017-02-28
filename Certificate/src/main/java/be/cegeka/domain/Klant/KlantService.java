@@ -1,8 +1,5 @@
 package be.cegeka.domain.klant;
 
-import be.cegeka.domain.Klant.Klant;
-import be.cegeka.domain.Klant.KlantRepository;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;

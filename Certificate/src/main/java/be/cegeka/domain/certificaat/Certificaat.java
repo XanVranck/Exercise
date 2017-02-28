@@ -1,6 +1,7 @@
 package be.cegeka.domain.certificaat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -18,7 +19,7 @@ public class Certificaat {
     private String certificateNumber;
 
     @Column(name = "CERTIFICAAT_DATUM")
-    private Date certificateDate;
+    private LocalDate certificateDate;
 
     @Column(name = "SPECIFIEK_TONNAGE")
     private int specificWeight;
@@ -26,7 +27,7 @@ public class Certificaat {
     public Certificaat() {
     }
 
-    public Certificaat(String certificateNumber, Date certificateDate, int specificWeight) {
+    public Certificaat(String certificateNumber, LocalDate certificateDate, int specificWeight) {
         this.certificateNumber = certificateNumber;
         this.certificateDate = certificateDate;
         this.specificWeight = specificWeight;
@@ -40,7 +41,7 @@ public class Certificaat {
         return certificateNumber;
     }
 
-    public Date getCertificateDate() {
+    public LocalDate getCertificateDate() {
         return certificateDate;
     }
 

@@ -1,8 +1,6 @@
 package be.cegeka.domain.klant;
 
 import be.cegeka.CertificateApplication;
-import be.cegeka.domain.Klant.Klant;
-import be.cegeka.domain.Klant.KlantRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
