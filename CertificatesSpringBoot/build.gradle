@@ -16,7 +16,7 @@ apply plugin: 'idea'
 apply plugin: 'jacoco'
 apply plugin: 'flyway'
 
-group = 'be.cegeka.certificate'
+group = 'be.cegeka'
 version = '1.0.0'
 
 sourceCompatibility = 1.8
