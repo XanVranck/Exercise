@@ -1,6 +1,5 @@
 package be.cegeka.domain.Klant;
 
-import be.cegeka.domain.klant.Adres;
 import be.cegeka.domain.klant.Klant;
 import be.cegeka.domain.klant.KlantRepository;
 import be.cegeka.domain.klant.KlantService;
@@ -10,7 +9,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import static org.mockito.Matchers.refEq;
+
+import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -28,8 +28,7 @@ public class KlantServiceTest {
 
     @Test
     public void addCustomer() throws Exception {
-        Adres address1 = new Adres("Doelhaagstraat", "78", "5555", "Rumst");
-        Klant klant=new Klant("paulien",address1);
+        Klant klant=new Klant("paulien","Doelhaagstraat", "78", "5555", "Rumst");
         klantService.addKlant(klant);
         verify(klantRepository).addKlant(refEq(klant));
     }

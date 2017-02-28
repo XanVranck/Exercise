@@ -1,7 +1,6 @@
 package be.cegeka.domain.Klant;
 
 import be.cegeka.CertificatesSpringBootApplication;
-import be.cegeka.domain.klant.Adres;
 import be.cegeka.domain.klant.Klant;
 import be.cegeka.domain.klant.KlantRepository;
 import org.junit.After;
@@ -12,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -29,23 +29,18 @@ public class KlantRepositoryTest {
     @Inject
     private KlantRepository klantRepository;
     private Klant xan, nena;
-    private Adres adres1, adres2;
 
     @Before
     public void setup() {
-        adres1 = new Adres("schoolstraat", "78", "1745", "Opwijk");
-        adres2 = new Adres("schoolstraat", "79", "1745", "Opwijk");
-        entityManager.persist(adres1);
-        entityManager.persist(adres2);
-        xan = new Klant("Xan", adres1);
-        xan = new Klant("Nena", adres2);
+        xan = new Klant("Xan", "schoolstraat", "78", "1745", "Opwijk");
+        xan = new Klant("Nena", "schoolstraat", "79", "1745", "Opwijk");
         entityManager.persist(xan);
         entityManager.persist(nena);
     }
 
     @Test
     public void addKlant() throws Exception {
-        Klant moeke = new Klant("Moeke", new Adres("fl", "7", "11110", "qsd"));
+        Klant moeke = new Klant("Moeke", "fl", "7", "11110", "qsd");
         klantRepository.addKlant(moeke);
         assertThat(klantRepository.getKlanten()).contains(xan, nena, moeke);
     }

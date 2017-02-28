@@ -3,33 +3,56 @@ package be.cegeka.domain.klant;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "klanten")
+@Table(name = "KLANTEN")
 public class Klant {
     @Id
     @Column(name = "KLANTEN_ID")
     private int klantenID;
+
     @Column(name = "NAAM")
     private String name;
-    @ManyToOne
-    @JoinColumn(name = "ADRES_ID")
-    private Adres address;
+    @Column(name = "STRAAT")
+    private String street;
+    @Column(name = "NUMMER")
+    private String number;
+    @Column(name = "POSTCODE")
+    private String zipCode;
+    @Column(name = "STAD")
+    private String city;
+
+    public Klant(String name, String street, String number, String zipCode, String city) {
+        this.name = name;
+        this.street = street;
+        this.number = number;
+        this.zipCode = zipCode;
+        this.city = city;
+    }
 
     public Klant() {
     }
 
-    public Klant(String name, Adres address) {
-        this.name = name;
-        this.address = address;
-    }
 
     public String getName() {
         return name;
     }
 
-    public Adres getAddress() {
-        return address;
+    public int getKlantenID() {
+        return klantenID;
     }
 
+    public String getStreet() {
+        return street;
+    }
 
+    public String getNumber() {
+        return number;
+    }
 
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
 }

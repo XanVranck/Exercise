@@ -1,5 +1,6 @@
 package be.cegeka.domain.klant;
 
+import javax.inject.Named;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,6 +9,7 @@ import java.util.List;
 /**
  * Created by xanv on 27/02/2017.
  */
+@Named
 public class KlantRepository {
 
     @PersistenceContext
