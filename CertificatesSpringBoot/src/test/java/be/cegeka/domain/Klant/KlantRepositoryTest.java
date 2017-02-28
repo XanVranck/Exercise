@@ -33,7 +33,7 @@ public class KlantRepositoryTest {
     @Before
     public void setup() {
         xan = new Klant("Xan", "schoolstraat", "78", "1745", "Opwijk");
-        xan = new Klant("Nena", "schoolstraat", "79", "1745", "Opwijk");
+        nena = new Klant("Nena", "schoolstraat", "79", "1745", "Opwijk");
         entityManager.persist(xan);
         entityManager.persist(nena);
     }
