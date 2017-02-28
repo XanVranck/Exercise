@@ -1,13 +1,12 @@
 package be.cegeka.certificate.domain.klant;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by xanv on 27/02/2017.
  */
+@Entity
+@Table(name = "ADRES")
 public class Adres {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

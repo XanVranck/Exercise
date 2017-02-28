@@ -9,15 +9,18 @@ import org.junit.Test;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by xanv on 27/02/2017.
  */
+@Transactional
 public class KlantRepositoryTest {
     @PersistenceContext
     private EntityManager entityManager;
+
     private KlantRepository klantRepository;
     private Klant xan, nena;
     private Adres adres1, adres2;
