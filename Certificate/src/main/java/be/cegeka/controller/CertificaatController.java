@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Controller
 @RequestMapping("/certificaat")
+@Transactional
 public class CertificaatController {
     @Inject
     private CertificaatService certificaatService;
