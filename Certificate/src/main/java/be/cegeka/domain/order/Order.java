@@ -41,7 +41,7 @@ public class Order {
         this.total = total;
     }
 
-    public int getKlantenID() {
+    public int getOrderID() {
         return orderID;
     }
 
