@@ -15,11 +15,11 @@ public class Certificaat {
     @Column(name = "CERTIFICAAT_ID")
     private int certificaatID;
 
-    @Column(name = "CERTIFICAAT_NUMBER")
+    @Column(name = "CERTIFICAAT_NUMBER", unique = true)
     private String certificateNumber;
 
     @Column(name = "CERTIFICAAT_DATUM")
-    private LocalDate certificateDate;
+    private String certificateDate;
 
     @Column(name = "SPECIFIEK_TONNAGE")
     private int specificWeight;
@@ -27,7 +27,7 @@ public class Certificaat {
     public Certificaat() {
     }
 
-    public Certificaat(String certificateNumber, LocalDate certificateDate, int specificWeight) {
+    public Certificaat(String certificateNumber, String certificateDate, int specificWeight) {
         this.certificateNumber = certificateNumber;
         this.certificateDate = certificateDate;
         this.specificWeight = specificWeight;
@@ -41,7 +41,7 @@ public class Certificaat {
         return certificateNumber;
     }
 
-    public LocalDate getCertificateDate() {
+    public String getCertificateDate() {
         return certificateDate;
     }
 
