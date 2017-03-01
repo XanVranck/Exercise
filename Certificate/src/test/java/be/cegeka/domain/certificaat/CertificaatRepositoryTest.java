@@ -31,15 +31,15 @@ public class CertificaatRepositoryTest {
 
     @Before
     public void setup() {
-        one = new Certificaat("1", LocalDate.now(),50);
-        two = new Certificaat("3", LocalDate.now(), 79);
+        one = new Certificaat("1", "1",50);
+        two = new Certificaat("3", "1", 79);
         entityManager.persist(one);
         entityManager.persist(two);
     }
 
     @Test
     public void addCertificaat() throws Exception {
-        Certificaat certificaat = new Certificaat("2", LocalDate.now(), 6541);
+        Certificaat certificaat = new Certificaat("2", "1", 6541);
         certificaatRepository.addCertificate(certificaat);
         Assertions.assertThat(certificaatRepository.getCertificats()).contains(one, two, certificaat);
     }
