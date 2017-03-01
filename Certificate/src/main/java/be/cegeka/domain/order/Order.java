@@ -16,7 +16,7 @@ public class Order {
     @Column(name = "ORDER_ID")
     private int orderID;
 
-    @Column(name = "WORK_ORDER_NUMBER")
+    @Column(name = "WORK_ORDER_NUMBER", unique = true)
     private String workOrderNumber;
 
     @Column(name = "PUCHASE_ORDER_NUMBER")
