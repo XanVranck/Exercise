@@ -1,6 +1,7 @@
 package be.cegeka.domain.klant;
 
 import be.cegeka.CertificateApplication;
+import be.cegeka.infrastructure.SpringIntegrationTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,11 +17,8 @@ import javax.transaction.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = CertificateApplication.class)
-@Transactional
-public class KlantRepositoryTest {
+public class KlantRepositoryTest extends SpringIntegrationTest{
+
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -47,6 +45,20 @@ public class KlantRepositoryTest {
     @Test
     public void getKlanten() throws Exception {
         assertThat(klantRepository.getKlanten()).contains(xan, nena);
+    }
+
+    @Test
+    public void findKlant_OneResult(){
+        Klant actual = klantRepository.findKlant(xan.getKlantenID());
+
+        assertThat(actual).isEqualToComparingFieldByField(xan);
+    }
+
+    @Test
+    public void findKlant_NoResult(){
+        Klant actual = klantRepository.findKlant(254445);
+
+        assertThat(actual).isNull();
     }
 
     @After

@@ -1,6 +1,7 @@
 package be.cegeka.domain.certificaat;
 
 import be.cegeka.CertificateApplication;
+import be.cegeka.infrastructure.SpringIntegrationTest;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
@@ -16,11 +17,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = CertificateApplication.class)
-@Transactional
-public class CertificaatRepositoryTest {
+public class CertificaatRepositoryTest extends SpringIntegrationTest{
     @PersistenceContext
     private EntityManager entityManager;
 
