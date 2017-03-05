@@ -21,8 +21,8 @@ public class CertificaatController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public void addCertificaat(@RequestBody Certificaat certificaat){
-        certificaatService.addCertificate(certificaat);
+    public void addCertificaat(@RequestBody CertificaatDTO certificaat){
+        certificaatService.addCertificaat(certificaat);
     }
 
     @RequestMapping(method = RequestMethod.GET)
