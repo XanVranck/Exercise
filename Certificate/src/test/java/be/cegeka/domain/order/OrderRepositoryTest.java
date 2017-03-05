@@ -1,12 +1,14 @@
 package be.cegeka.domain.order;
 
 import be.cegeka.CertificateApplication;
+import be.cegeka.infrastructure.SpringIntegrationTest;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -18,11 +20,8 @@ import javax.transaction.Transactional;
 /**
  * Created by xanv on 28/02/2017.
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = CertificateApplication.class)
-@Transactional
-public class OrderRepositoryTest {
+
+public class OrderRepositoryTest extends SpringIntegrationTest{
     @PersistenceContext
     private EntityManager entityManager;
 

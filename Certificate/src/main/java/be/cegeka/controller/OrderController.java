@@ -21,7 +21,7 @@ public class OrderController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    public void addOrder(@RequestBody Order order){
+    public void addOrder(@RequestBody OrderDTO order){
         orderService.addOrder(order);
     }
 

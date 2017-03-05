@@ -3,6 +3,7 @@ package be.cegeka.domain.klant;
 import be.cegeka.domain.order.Order;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,7 +25,7 @@ public class Klant {
     @Column(name = "STAD")
     private String city;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Order> orders;
+    private List<Order> orders = new ArrayList<>();
 
 
     public Klant(String name, String street, String number, String zipCode, String city) {
@@ -61,5 +62,13 @@ public class Klant {
 
     public String getCity() {
         return city;
+    }
+
+    public List<Order> getOrders(){
+        return orders;
+    }
+
+    public void addOrder(Order order) {
+        orders.add(order);
     }
 }
