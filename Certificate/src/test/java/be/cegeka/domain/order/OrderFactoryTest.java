@@ -14,7 +14,6 @@ public class OrderFactoryTest {
     public static final String SPECIFICATION = "specification";
     public static final int TOTAL = 5000;
     public static final int CUSTOMER_ID = 5;
-    private String workOrderNumber;
 
     @Test
     public void createOrder() throws Exception {

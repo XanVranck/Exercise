@@ -17,6 +17,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 /**
  * Created by xanv on 28/02/2017.
  */
@@ -41,14 +43,28 @@ public class OrderRepositoryTest extends SpringIntegrationTest{
 
     @Test
     public void getOrders() throws Exception {
-        Assertions.assertThat(orderRepository.getOrders()).contains(xan, nena);
+        assertThat(orderRepository.getOrders()).contains(xan, nena);
 
     }
 
     @Test
     public void addOrders() throws Exception {
         orderRepository.addOrder(boe);
-        Assertions.assertThat(orderRepository.getOrders()).contains(xan, nena, boe);
+        assertThat(orderRepository.getOrders()).contains(xan, nena, boe);
+    }
+
+    @Test
+    public void findOrder_OneResult(){
+        Order actual = orderRepository.findOrder(xan.getOrderID());
+
+        assertThat(actual).isEqualToComparingFieldByField(xan);
+    }
+
+    @Test
+    public void findOrder_NoResult(){
+        Order actual = orderRepository.findOrder(254445);
+
+        assertThat(actual).isNull();
     }
 
     @After

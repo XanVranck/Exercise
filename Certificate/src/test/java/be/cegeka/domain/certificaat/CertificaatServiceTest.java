@@ -30,7 +30,7 @@ public class CertificaatServiceTest {
     @Test
     public void addCustomer() throws Exception {
         Certificaat certificaat=new Certificaat("50", "1",50000);
-        certificaatService.addCertificate(certificaat);
+        certificaatRepository.addCertificate(certificaat);
         verify(certificaatRepository).addCertificate(refEq(certificaat));
     }
 
