@@ -2,6 +2,9 @@ package be.cegeka.domain.order;
 
 import be.cegeka.controller.OrderDTO;
 
+import javax.inject.Named;
+
+@Named
 public class OrderFactory {
     public OrderFactory() {
     }
