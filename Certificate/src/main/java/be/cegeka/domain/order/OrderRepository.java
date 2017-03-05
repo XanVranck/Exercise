@@ -21,4 +21,9 @@ public class OrderRepository {
     public List<Order> getOrders() {
         return entityManager.createQuery("select o from Order o", Order.class).getResultList();
     }
+
+    public Order findOrder(int orderId) {
+        return entityManager.find(Order.class, orderId);
+    }
+
 }
