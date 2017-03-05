@@ -3,6 +3,7 @@ package be.cegeka.domain.order;
 import be.cegeka.domain.certificaat.Certificaat;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,7 +30,7 @@ public class Order {
     private int total;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Certificaat> certificaten;
+    private List<Certificaat> certificaten = new ArrayList<>();
 
     public Order() {
     }
@@ -59,5 +60,13 @@ public class Order {
 
     public int getTotal() {
         return total;
+    }
+
+    public void addCertificaat(Certificaat certificaat) {
+        certificaten.add(certificaat);
+    }
+
+    public List<Certificaat> getCertificaten() {
+        return certificaten;
     }
 }
