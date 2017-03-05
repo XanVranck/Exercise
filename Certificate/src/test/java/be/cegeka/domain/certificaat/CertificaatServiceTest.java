@@ -29,7 +29,7 @@ public class CertificaatServiceTest {
 
     @Test
     public void addCustomer() throws Exception {
-        Certificaat certificaat=new Certificaat("50", LocalDate.now(),50000);
+        Certificaat certificaat=new Certificaat("50", "1",50000);
         certificaatService.addCertificate(certificaat);
         verify(certificaatRepository).addCertificate(refEq(certificaat));
     }
