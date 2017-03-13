@@ -1,8 +1,6 @@
 package be.cegeka.domain.certificaat;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Created by xanv on 28/02/2017.
