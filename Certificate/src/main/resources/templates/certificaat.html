@@ -1,0 +1,96 @@
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="jasper.css" rel="stylesheet">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />-->
+
+<header class="ccheader">
+    <h1>Certificates</h1>	
+</header>
+<div class="wrapper">
+<h2>Existing certificates</h2>
+    <table class="ccform">
+     <thead>
+         <tr>
+             <th>Certificate nr</th>
+             <th>Date certificate</th>
+             <th>Tonnage</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr>
+             <td>
+             <div class="radiotext">
+                 <label for='Certificatenr1'>Certificate nr1</label>
+             </div>
+             </td>
+            <td>
+             <div class="radiotext">
+                 <label for='Certificatenr1'>Date Certificate1</label>
+             </div>
+             </td>
+              <td>
+             <div class="radiotext">
+                 <label for='Certificatenr1'>Tonnage 1</label>
+             </div>
+             </td>
+         </tr>
+          <tr>
+             
+             <td>
+             <div class="radiotext">
+                 <label for='Certificatenr2'>Certificate nr2</label>
+             </div>
+             </td>
+            <td>
+             <div class="radiotext">
+                 <label for='Certificatenr2'>Date Certificate2</label>
+             </div>
+             </td>
+              <td>
+             <div class="radiotext">
+                 <label for='Certificatenr2'>Tonnage 2</label>
+             </div>
+             </td>
+         </tr>
+           <tr>
+            
+             <td>
+             <div class="radiotext">
+                 <label for='Certificatenr3'>Certificate nr3</label>
+             </div>
+             </td>
+            <td>
+             <div class="radiotext">
+                 <label for='Certificatenr3'>Date Certificate3</label>
+             </div>
+             </td>
+              <td>
+             <div class="radiotext">
+                 <label for='Certificatenr3'>Tonnage 3</label>
+             </div>
+             </td>
+         </tr>
+           
+         </tbody>
+</table>
+    
+    
+    
+	<h2>Add new certificate</h2>
+    <form method="post" action="" class="ccform">
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"><i class="fa fa-certificate fa-2x"></i></span>
+        <input class="ccformfield" type="text" placeholder="Certificate nr" required>
+    </div>
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"><i class="fa fa-calendar-check-o fa-2x"></i></span>
+        <input class="ccformfield" type="text" placeholder="Date certificate" required>
+    </div>
+    <div class="ccfield-prepend">
+        <span class="ccform-addon"><i class="fa fa-balance-scale fa-2x"></i></span>
+        <input class="ccformfield" type="number" name="quantity" min="1" placeholder="Tonnage" required>
+    </div>
+    <div class="ccfield-prepend">
+        <input class="ccbtn" type="submit" value="Submit">
+    </div>
+    </form>
+</div>
